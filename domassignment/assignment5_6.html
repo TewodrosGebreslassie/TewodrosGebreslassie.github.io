@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+
+
+// Create and add Div,p,img,link, textInput,textArea,button,checkbox,radio,label
+function creatElement(){
+
+   const label1= document.createElement("label");
+    label1.innerHTML="java";
+
+   const label2=document.createElement("label");
+    label2.innerHTML="java script";
+
+    const label3= document.createElement("label");
+    label3.innerHTML="phyton";
+
+    const label4=document.createElement("label");
+    label4.innerHTML="c#programing";
+  
+
+
+
+  
+    const box=document.createElement("input");
+    box.setAttribute("type","checkbox")
+    const radio=document.createElement("input");
+    radio.setAttribute("type","radio");
+    const radio2=document.createElement("input");
+    radio2.setAttribute("type","radio");
+
+
+    document.body.append(label1);
+    document.body.append(radio);
+    document.body.append(label2);
+    document.body.append(radio2);
+    document.body.append(label3);
+    document.body.append(radio);
+    document.body.append(label4);
+    document.body.append(box);
+    
+//         // <!-- 6. Add one row to the existing table and one item to the existing ordered/unordered list. -->
+// const tabel=document.createElement('tabel');
+// const tr=document.createElement('tr');
+// tr.innerHTML=("hello world");
+
+// const ol=document.createElement('ol');
+// const li=document.createElement('li');
+// li.innerHTML="list";
+// ol.prepend(li);
+
+
+// document.body.append(tabel);
+// document.body.tabel.append(tr);
+// document.body.append(ol);
+
+} 
+
+</script>
+
+
+</head>
+<body>
+
+
+    <div id="divId">my dive One</div>
+    <br />
+    <p id="parId">this is paragraph</p>
+    <br />
+    <input type="text" id="inputId" value="googel" />
+    <br />
+    <a href="https://googel.com" id="linkId">Googel</a>
+    <br />
+
+    <img src="/4in1.webp" id="imgId" width="80" height="80" alt="" />
+    <br />
+    <a href="https://googel.com" class="aId" id="newaId"> geoogel</a>
+    <br />
+
+    <br />
+    <textarea value="text" name="ted" id="" cols="10" rows="5" id="">
+text area</textarea
+    >
+
+
+
+    <!-- // this is to make space  -->
+<p>this is the fist parag</p>
+<p>this is second paragraph</p>
+
+<p id="pOne">this is pOne</p>
+<p id="pTwo">this is second</p>
+
+
+
+
+<a href="https://googel.com" id="atag">googel</a>
+    <button onclick="changeText()">submitButton</button>
+
+    <input type="text">
+    <button onclick="blank()">submit</button>
+    <button onclick="prepend()">prepend</button>
+
+
+    <button onclick="creatElement()" >submit Element</button>
+</body>
+</html>
