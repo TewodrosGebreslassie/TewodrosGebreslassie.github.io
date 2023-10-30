@@ -1,0 +1,369 @@
+/* about as nv bar*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+input,textarea{
+  background-color: lightblue;
+  border-radius: 10%;
+}
+
+input:focus,textarea:focus{
+  background-color: goldenrod;
+  border-radius: 10px;
+  box-shadow: 2px;
+  border: yellowgreen;
+}
+
+
+/* //soicial media */
+.socialMedia-parentDiv{
+  position: relative;
+  height: 100%;
+}
+.socialMedia{
+display: grid;
+text-align: right;
+position: fixed;
+bottom: 20px;
+right: 20px;
+align-self: flex-end;
+}
+.socialMedia>li{
+  list-style-type: none;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter{
+  background: #55ACEE;
+  color: white;
+}
+.fa-youtube{
+    background: red;
+  color: white;
+}
+
+.fa-whatsapp{
+ linear-gradient(#25d366,#25d366) 14% 84%/16% 16% no-repeat,
+   radial-gradient(#25d366 58%,transparent 0);
+  color:#fff;
+}
+
+
+.an {
+  text-decoration: none;
+}
+
+
+
+a{
+  color: #BFA181;
+   font-weight: bolder;
+   padding-top: 10px;
+}
+
+
+
+
+
+
+/* ////b */
+
+
+
+/* FAQ */
+.answer {
+  display: none;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Style for questions */
+.question {
+  cursor: pointer;
+}
+
+/* Style for answers when displayed */
+.question.active .answer {
+  display: block;
+}
+.faq_ans{
+  color:#3B5998;
+  background-color: #fff ;
+}
+
+
+
+.ft_a{
+  color:#3B5998;
+}
+
+
+
+/* Example CSS for styling the login form */
+.login-container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 1000px;
+}
+
+.login-box {
+background-color: #fff;
+border: 1px solid #e2dfdf;
+padding: 20px;
+border-radius: 8px;
+text-align: center;
+}
+
+h2 {
+font-size: 24px;
+font-weight: bold;
+}
+
+.input-element {
+border: 1px solid #e2dfdf;
+color: black;
+font-size: medium;
+padding: 10px;
+margin: 10px 0;
+width: 100%;
+}
+
+.log-in-button {
+background-color: #007bff;
+margin-top: 15px;
+padding: 10px;
+border-radius: 5px;
+}
+
+.log-in-link {
+color: white;
+text-decoration: none;
+}
+
+.forgot-password-link {
+margin-top: 20px;
+}
+
+.forgot-link {
+color: blue;
+text-decoration: none;
+}
+
+.separator {
+border-bottom: 1px solid #e2dfdf;
+width: 88%;
+margin-left: 9%;
+margin-Top: 10px;
+}
+
+.create-account {
+margin-Top: 50px;
+}
+
+.create-account-link {
+background-color: #007bff;
+padding: 10px;
+border-radius: 10px;
+color: white;
+text-decoration: none;
+font-weight: bold;
+}
+
+
+/* ///LOGO */
+
+
+
+div .logImg {
+  width: 180px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.logImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  position: absolute;
+  animation: moveBackAndForth 5s linear infinite;
+}
+
+@keyframes moveBackAndForth {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(600px);
+  }
+}
+
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.login-box {
+  background-color: #fff;
+  border: 1px solid #e2dfdf;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.input-element {
+  border: 1px solid #e2dfdf;
+  color: black;
+  font-size: medium;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.log-in-button {
+  background-color: #007bff;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.log-in-link {
+  color: white;
+  text-decoration: none;
+  background-color: #007bff;
+}
+
+.forgot-password-link {
+  margin-top: 20px;
+}
+
+.forgot-link {
+  color: blue;
+  text-decoration: none;
+}
+
+.separator {
+  border-bottom: 1px solid #e2dfdf;
+  width: 88%;
+  margin-left: 9%;
+  margin-Top: 10px;
+}
+
+.create-account {
+  margin-Top: 50px;
+}
+
+.create-account-link {
+  background-color: #007bff;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+@media screen and (min-width: px) {
+  .input-element {
+    width: 50%;
+    margin: 10px;
+  }
+
+
+
+  /* Add CSS animation for the logo */
+.logo {
+  animation: rotate 5s linear infinite;
+}
+
+/* Define keyframes for the rotation animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* ?//midia quary for face book log in */
+/*  */
+/* Add media query for minimum width of 600px */
+@media (min-width: 600px) {
+  .login-container {
+    display: flex;
+    justify-content: center;
+  }
+  .login-box {
+    width: 50%;
+  }
+  .logImg {
+    display: none;
+  }
+  .input-element {
+    width: 50%;
+  }
+}
+
+
+
+
+/* Add a media query to hide social media links below 600px */
+@media (max-width: 600px) {
+  .socialMedia {
+    display: none;
+  }
+}
