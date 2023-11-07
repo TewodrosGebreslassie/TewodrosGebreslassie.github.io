@@ -1,0 +1,77 @@
+body {
+  background: rgb(239, 244, 246);
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+.main_content {
+  display: flex;
+}
+
+.logo_description {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.log_in_box {
+  margin-top: 100px;
+  background: white;
+  min-width: 355px;
+  border-radius: 10px;
+  border-color: 1px solid rgb(226, 223, 223);
+}
+
+.input_elements {
+  width: 88%;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 6px;
+}
+.placeholder_lay_out {
+  text-align: left;
+  font-size: larger;
+}
+.log_in_color {
+  background: rgb(62, 109, 250);
+}
+
+.new_account {
+  background-color: rgb(131, 209, 15);
+  width: 50%;
+  text-align: center;
+  margin-left: 22%;
+  margin-top: 20px;
+}
+
+.footer {
+  color: grey;
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: white;
+}
+
+.footer_1 a {
+  color: gray;
+  font-size: x-small;
+  text-decoration-line: none;
+  margin-right: 20px;
+}
+.footer_upper:after {
+  content: " \002B";
+  border: 1px solid #dad5d5;
+  padding: 0.5px 7px;
+  background-color: rgb(236, 235, 235);
+}
+
+/* media query */
+/* /***************** */
+@media (max-width: 500px) {
+  .main_content {
+    display: block;
+  }
+  .left_content {
+    text-align: center;
+  }
+}

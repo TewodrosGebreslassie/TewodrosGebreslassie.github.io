@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .name {
+      border: 1px solid red;
+    }
+  </style>
+  <script>
+    function clickMe() {
+      document.getElementById("name1").style.backgroundColor = "red";
+    }
+    function clickMe2() {
+      document.getElementById("name3").style.backgroundColor = "yellow";
+      document.getElementById("name3").style.padding = "20px";
+    }
+  </script>
+
+  <body>
+    <div class="name" id="name1">Enter your name</div>
+    <br />
+    <div class="name" id="name2">Enter your second name</div>
+    <br />
+    <div class="name" id="name3">Enter your anthor name</div>
+
+    <button onclick="clickMe()">click first</button>
+    <button onclick="clickMe2()">click second</button>
+  </body>
+</html>

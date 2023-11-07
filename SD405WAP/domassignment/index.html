@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+
+      function creatElement(){
+
+      const label1= document.createElement("label");
+       label1.innerHTML="java";
+
+      const label2=document.createElement("label");
+       label2.innerHTML="java script";
+
+       const label3= document.createElement("label");
+       label3.innerHTML="phyton";
+
+       const label4=document.createElement("label");
+       label4.innerHTML="c#programing";
+
+
+
+
+
+       const box=document.createElement("input");
+       box.setAttribute("type","checkbox")
+       const radio=document.createElement("input");
+       radio.setAttribute("type","radio");
+       const radio2=document.createElement("input");
+       radio2.setAttribute("type","radio");
+
+
+       document.body.append(label1);
+       document.body.append(radio);
+       document.body.append(label2);
+       document.body.append(radio2);
+       document.body.append(label3);
+       document.body.append(radio);
+       document.body.append(label4);
+       document.body.append(box);
+            function changeText() {
+              const div = document.getElementById("divId");
+              const parEle = document.getElementById("parId");
+              const inputEle = document.getElementById("inputId");
+              const atag = document.getElementById("linkId");
+              const image = document.getElementById("imgId");
+              const textch = document.getElementById("textId");
+
+              const newdiv = document.createElement("div");
+              const radio = document.createElement("input");
+
+      // this is to make space
+              const paraone= document.getElementById("pOne");
+              const parTwo= document.getElementById("pTwo");
+
+
+      // ...?
+      // change link change the address of link
+      const atagLink=document.getElementById("atag");
+
+      atagLink.setAttribute('href','https://amazon.com');
+      atagLink.innerHTML="Amazon.com c";
+
+              div.innerHTML = "This New Div This is the changed div";
+              parEle.innerHTML = "New Paragraph";
+              inputEle.value = "Amazon";
+              atag.innerHTML = "Amazon";
+              atag.setAttribute("href", "https://amazon.com");
+              image.setAttribute("src", "/flower.jpg.png");
+              newdiv.innerHTML = "this is new div";
+              document.body.append(newdiv);
+
+              radio.setAttribute("type", "radio");
+              document.body.append(radio);
+              // textch.innerHTML = "this is new text area";
+
+              if(paraone!==none){
+                  paraone.innerHTML=none
+              }
+              if(paraone===none){
+
+              }
+
+
+
+
+            }
+    </script>
+  </head>
+  <body>
+    <div id="divId">my dive One</div>
+    <br />
+    <p id="parId">this is paragraph</p>
+    <br />
+    <input type="text" id="inputId" value="googel" />
+    <br />
+    <a href="https://googel.com" id="linkId">Googel</a>
+    <br />
+
+    <img src="/4in1.webp" id="imgId" width="80" height="80" alt="" />
+    <br />
+    <a href="https://googel.com" class="aId" id="newaId"> geoogel</a>
+    <br />
+
+    <br />
+    <textarea value="text" name="ted" id="" cols="10" rows="5" id="">
+text area</textarea
+    >
+
+    <!-- // this is to make space  -->
+    <p>this is the fist parag</p>
+    <p>this is second paragraph</p>
+
+    <p id="pOne">this is pOne</p>
+    <p id="pTwo">this is second</p>
+
+    <a href="https://googel.com" id="atag">googel</a>
+    <button onclick="changeText()">submitButton</button>
+  </body>
+</html>
