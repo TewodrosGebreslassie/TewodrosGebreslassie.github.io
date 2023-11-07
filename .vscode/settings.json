@@ -1,0 +1,8 @@
+{
+  "liveServer.settings.port": 5501,
+  "git.confirmNoVerifyCommit": false,
+  "git.enableSmartCommit": true,
+  "git.enableCommitSigning": false,
+  "git.timeline.showUncommitted": true,
+  "files.autoSave": "onFocusChange"
+}
