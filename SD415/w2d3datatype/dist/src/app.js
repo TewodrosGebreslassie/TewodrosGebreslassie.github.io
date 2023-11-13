@@ -37,7 +37,7 @@ export function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 // // /**
-//  * 
+//  *
 // function readNumber(arr: string[]:string): any {
 // for(let ele of arr){
 // if(parseFloat(ele)===ele){
@@ -48,7 +48,7 @@ export function getRandomNumber(min, max) {
 // }
 // console.log(readNumber(["12.3","123abc"]))
 /* @param {*} str
-*/
+ */
 export function ucFirst(str) {
     if (str.length === 0) {
         return "";
@@ -97,11 +97,11 @@ export function truncate(str, maxlength) {
     }
 }
 /**
- *
- * @param {Array} arr of numbers
- * @returns {number} the total of the maximal subarray
- 
- */
+   *
+   * @param {Array} arr of numbers
+   * @returns {number} the total of the maximal subarray
+   
+   */
 export function getMaxSubSum(arr) {
     let maxSum = 0;
     let currentSum = 0;
@@ -124,14 +124,14 @@ export function extractCurrencyValue(str) {
     return Number(result);
 }
 // /**
-//  * 
-//  * @param {*} str 
-//  * @param {*} maxlength 
+//  *
+//  * @param {*} str
+//  * @param {*} maxlength
 //  */
 // export   function truncate(str, maxlength) {
 //   }
 // /**
-//  * 
+//  *
 //  * @param {Array} arr of numbers
 //  * @returns {number} the total of the maximal subarray
 //  */
@@ -139,4 +139,4 @@ export function extractCurrencyValue(str) {
 // }
 // export function camelize(str) {
 //   }
-// export function extractCurrencyValue(){} 
+// export function extractCurrencyValue(){}
