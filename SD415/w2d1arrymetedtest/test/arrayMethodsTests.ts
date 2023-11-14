@@ -1,8 +1,3 @@
-
-//Implement the firstLast function.  Use the appropriate array method in your function. 
-
-
-
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 import { assert } from "chai";
 
