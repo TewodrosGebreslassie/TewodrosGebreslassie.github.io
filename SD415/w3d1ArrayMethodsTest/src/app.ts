@@ -1,5 +1,7 @@
 // type Sections
 
+import { type } from "os";
+
 // function getAllSecton(dailyRecord: day[]):Section[]{
 
 //     let sectioArr:section[]=[];
@@ -173,3 +175,114 @@ console.log(getAllDurations(dailyRecord));
 // ///f
 
 // }
+
+
+
+// function squaredArr(arr:number[]): number[]{
+
+//   let squaredArr=arr.map(num=>(num*num))
+  
+// return squaredArr
+  
+//   }
+//   const array123 = [1, 2, 3]
+//   console.log(squaredArr(array123))
+
+//   const arr123 = [1, 2, 3];
+
+// function reducefun(arr:number[]):number[]{
+// const sum = arr123.reduce((total, num) => total + num, 0);
+
+// console.log(sum);
+// }
+// console.log(reducefun(arr123))
+
+
+// Part 1 of 1 -
+
+// Question 8 of 9	0 Points
+// /* write a function, maxPoints, to find and return the maximum points of any single player.   */
+
+// const player1 = {name: "Bob", points: [1, 2, 1]};
+// const player2 = {name: "Andre", points: [2, 0, 1]};
+// const player3 = {name: "Max", points: [1, 1, 1]};
+// const players = [player1, player2, player3];
+
+// console.log("expect 4:",  maxPoints(players));
+
+// function maxPoints(players) {
+//   let maxPoints = 0;
+
+//   for (const player of players) {
+//     let playerPoints = 0;
+    
+//     for (const point of player.points) {
+//       playerPoints += point;
+//     }
+
+//     if (playerPoints > maxPoints) {
+//       maxPoints = playerPoints;
+//     }
+//   }
+
+//   return maxPoints;
+// }
+
+// console.log("expect 4:",  maxPoints(players));
+
+// type Player = {
+//   name: string;
+//   points: number[];
+// };
+
+// function maxPoints(players: Player[]): number {
+//   let maxPoints = 0;
+
+//   for (const player of players) {
+//     let playerPoints = 0;
+    
+//     for (const point of player.points) {
+//       playerPoints += point;
+//     }
+
+//     if (playerPoints > maxPoints) {
+//       maxPoints = playerPoints;
+//     }
+//   }
+//   return maxPoints;
+// }
+
+
+///function 
+// function logger(foo:number):void {
+//   console.log(foo) 
+// }
+// let var1=logger;
+// console.log(var1); ///the function logger to the variable var1. So, var1 now holds a reference to the logger function./the function it sel.This will log the function itself because var1 holds a reference to the logger function.
+//let var2=logger(2);  // calling the logger function with the argument 2,//Logs 2, var2 is undefined// function logger does not have a return statement (returns void), so var2 is assigned the value undefined.
+// console.log(var2);
+
+
+// function loggere(x:number,y:number):number {
+//  return y*x;
+// }
+// let vare1=loggere(10,2);
+// console.log(vare1);
+
+
+// no 4
+
+type Name={
+  fname:string,
+  lname:string
+}
+
+function firstLast(arr: string[]):Name[]{
+
+  let firstLastname=arr.map(name=>name.split(" "))
+
+
+
+  return 0;
+  
+}
