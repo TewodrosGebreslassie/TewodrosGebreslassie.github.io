@@ -46,7 +46,7 @@ export function groupById(users: User[]): { [key: string]: User } {
     // declare usersById to be an object with string keys and User values
     const usersById: { [key: string]: User } = {};  
     // FURTHER IMPLEMENTATION REQUIRED HERE
-
+console.log(users)/////////////////////////////////////////////////////////////////////////to be removed
 
     return usersById;
 }
@@ -66,7 +66,7 @@ type FullNameUser = {
 export function map2fullName(users: SurnameUser[]): FullNameUser[] {
     let result: { fullName: string, id: number }[] = [];
     // FURTHER IMPLEMENTATION REQUIRED HERE
-
+    console.log(users)/////////////////////////////////////////////////////////////////////////to be removed
 
 
     return result;
@@ -75,7 +75,7 @@ export function map2fullName(users: SurnameUser[]): FullNameUser[] {
 
 export function sortByAge(users: User[]  ): void {
     // FURTHER IMPLEMENTATION REQUIRED HERE
-    return 0;
+    console.log(users)/////////////////////////////////////////////////////////////////////////to be removed
   }
 
 export function findOldest(users: User[]): User {
@@ -89,5 +89,6 @@ export function findOldest(users: User[]): User {
 
 /* getAverageAge using reduce */
 export function getAverageAge(users: User[]): number {
+    console.log(users)/////////////////////////////////////////////////////////////////////////to be removed
     return 0;
 }
