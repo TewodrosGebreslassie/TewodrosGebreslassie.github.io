@@ -17,11 +17,11 @@
 // const c=[4,5,6]
 // const d=c;  //is it true yes they have the same referance value
 
-function sayhi():void{
-console.log("Hello");
+// function sayhi():void{
+// console.log("Hello");
 
-}
-const myhi=sayhi;
+// }
+// const myhi=sayhi;
 
 arr.forEach(num: number)
 arrayBuffer.filter,==> return  Boolean
@@ -122,12 +122,12 @@ function executor(func: (num1: number, num2: number) => number, num1: number, nu
     return func(num1, num2);
 }
 
-6. Create an object calculator with two methods using an object literal:
- getValues(operand1, operand2) takes two values and saves them as object properties.
- sum() returns the sum of saved values.
- mul() multiplies saved values and returns the result.
-let calculator = {
-... your code ...
+//6. Create an object calculator with two methods using an object literal:
+//  getValues(operand1, operand2) takes two values and saves them as object properties.
+//  sum() returns the sum of saved values.
+//  mul() multiplies saved values and returns the result.
+// let calculator = {
+// ... your code ...
 // };
 calculator.setValues(5, 10);
 console.log( “expect 15 : “, calculator.sum() );

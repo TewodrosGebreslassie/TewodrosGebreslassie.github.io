@@ -75,6 +75,7 @@ export function map2fullName(users: SurnameUser[]): FullNameUser[] {
 
 export function sortByAge(users: User[]  ): void {
     // FURTHER IMPLEMENTATION REQUIRED HERE
+    return 0;
   }
 
 export function findOldest(users: User[]): User {
