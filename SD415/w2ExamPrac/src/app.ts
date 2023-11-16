@@ -265,63 +265,40 @@
 
 // console.log(gradeQuizcompletion(students, correctanswers));
 
-
-
-
-
 // const numbers = {
 //     one: 1,
 //     two: 22,
 //     three: 333,
 //     four: 444
 //   };
-   
+
 //   const propertyOrder = ["one", "four", "three", "two"];
-   
+
 //   for (let ele of propertyOrder) {
 //     console.log(numbers[ele]);
 //   }
 
 // ??q3*************************************************************************************************
 
+let arr = [1, 2, 3, 4];
 
-let arr=[1,2,3,4];
-
-let result=arr.map(ele=>ele*ele);
-console.log(result)
+let result = arr.map((ele) => ele * ele);
+console.log(result);
 
 // let name=arr.map(baz)
 
 // ??q4*************************************************************************************************
-type Name={firstName:string,lastName:string}
+type Name = { firstName: string; lastName: string };
 
-function firstLast(names:string[]):Name[]{
-
-    let resultArr=names.map(ele=>{
-let spName=ele.split(" ");
-let obj={firstName:spName[0],lastName:spName[1]}
-return obj
-    })
-    return resultArr
+function firstLast(names: string[]): Name[] {
+  let resultArr = names.map((ele) => {
+    let spName = ele.split(" ");
+    let obj = { firstName: spName[0], lastName: spName[1] };
+    return obj;
+  });
+  return resultArr;
 }
-console.log(firstLast(["teddy wngel","menge nati"]));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(firstLast(["teddy wngel", "menge nati"]));
 
 //***********************************************************************************************no 7777777777777777777777777777777***********************************************************88
 
@@ -332,85 +309,100 @@ const session4 = { userId: 3, duration: 15 };
 const session5 = { userId: 3, duration: 75 };
 const day1 = { sessions: [session1, session2], date: "01/10/2022" };
 const day2 = { sessions: [session3, session4, session5], date: "01/10/2022" };
-const dailyRecord = [ day1, day2];
-//**********************************************************************************************AAAAAAAAAAAAAAAAAAAAAAAAAA*********************************************************88
-type Session={
-    userId:number,
-    duration:number
+const dailyRecord = [day1, day2];
+//**********************************************************************************************7AAAAAAAAAAAAAAAAAAAAAAAAAA*********************************************************88
+type Session = {
+  userId: number;
+  duration: number;
+};
+type Day = {
+  sessions: Session[];
+  date: string;
+};
+//*****************************************************************************************7BBBBBBBBBBBBBBBBBBBBBBBBBBBBB*********************************************************88
+function calculateDailyTotalDuration(day: Day): number {
+  let total = 0;
+  for (const session of day.sessions) {
+    total += session.duration;
+  }
+  return total;
 }
-type Day={
-    sessions:Session[],
-    date:string
+
+//**********************************************************************************************7CCCCCCCCCCCCCCCCCCCCCCC*******************************************************88
+function calculateTotalDuration(dailyRecord: Day[]): number {
+  let tot = 0;
+  for (const dayy of dailyRecord) {
+    tot += calculateDailyTotalDuration(dayy);
+  }
+  return tot;
 }
-//*****************************************************************************************BBBBBBBBBBBBBBBBBBBBBBBBBBBBB*********************************************************88
-function calculateDailyTotalDuration(day:Day):number{
-    let total=0
-    for(const session of day.sessions){
-        total+=session.duration;
+
+console.log(calculateTotalDuration(dailyRecord));
+
+//*********************************************************************************************7DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD******************************************************88
+
+function getAllSessions(dailyRecord: Day[]): Session[] {
+  let allsection: Session[] = [];
+  for (const day of dailyRecord) {
+    for (const section of day.sessions) {
+      allsection = allsection.concat(section);
     }
-    return total
-}
-
-//**********************************************************************************************CCCCCCCCCCCCCCCCCCCCCCC*******************************************************88
-function calculateTotalDuration(dailyRecord:Day[]):number{
-    let tot=0;
-    for(const dayy of dailyRecord){
-tot+=calculateDailyTotalDuration(dayy)
-   
-}
-return tot;
-}
-
-console.log(calculateTotalDuration(dailyRecord))
-
-
-//*********************************************************************************************DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD******************************************************88
-
-function getAllSessions(dailyRecord:Day[]): Session[]{
-
-    let allsection:Session[]=[];
-for(const day of dailyRecord){
-    for(const section of day.sessions){
-        allsection=allsection.concat(section)
-    }
-}
-return allsection
-
+  }
+  return allsection;
 }
 console.log(getAllSessions(dailyRecord));
 
+//********************************************************************************************7EEEEEEEEEEEEEEEEEEEEE****************************************************88
 
-//********************************************************************************************EEEEEEEEEEEEEEEEEEEEE****************************************************88
+function filterForUserId(dailyRecord: Day[], num: number): Session[] {
+  let allsec = getAllSessions(dailyRecord);
 
-
-function filterForUserId(dailyRecord:Day[],num:number): Session[]{
-
-let allsec=getAllSessions(dailyRecord);
-
-
-    let filterdSect=allsec.filter(section=>section.userId===num)
-    return filterdSect
+  let filterdSect = allsec.filter((section) => section.userId === num);
+  return filterdSect;
 }
 
-console.log(filterForUserId(dailyRecord,2));
+console.log(filterForUserId(dailyRecord, 2));
 
-//*********************************************************************************************FFFFFFFFFFFFFFFFFFFFFFFFF******************************************************88
+//*********************************************************************************************7FFFFFFFFFFFFFFFFFFFFFFFFF******************************************************88
 
-function getAllDuration(dailyRecord:Day[]):number[]{
+// function getAllDuration(dailyRecord:Day[]):number[]{
 
-    let getallse=getAllSessions(dailyRecord);
+//     let getallse=getAllSessions(dailyRecord);
 
-    let resultAr:number[]=getallse.filter(wengel=>(wengel.duration>0)return resultArr;)
-    
-}
+//     let resultAr:number[]=getallse.filter(wengel=>wengel.duration)
+//     return resultAr;
 
-console.log(getAllDuration(dailyRecord));
+// }
 
+// console.log(getAllDuration(dailyRecord));
 
+//*********************************************************************************************filter*array*****************************************************88
+// let arr4=[2,5,7,8,9]
 
+// function filterar(arr:number[]):number[]{
+//     let resuArrr=arr.filter(num=>if(num>5){
+//         return num}));
+//     return resuArrr;
+// }
+// console.log(filterar(arr4));
 
+// let arr4=[2,5,7,3,4,8,9]
+
+// function filterar(arr:number[]):number[]{
+//     let newArr=arr.filter(num=>{
+// if(num%2!==0){
+//     return true
+// }
+// else{
+//     return false
+// }
+//     })
+//     return newArr;
+// }
+
+// console.log(filterar(arr4));
 ///***********************************************************************************************gpt exer***********************************************************88
-// Create a function called calculateSquareRoots that takes an array of numbers and returns a new array 
+// Create a function called calculateSquareRoots that takes an array of numbers and returns a new array
 // of objects. Each object in the new array should have a property called number which is the original number,
 // and another property called squareRoot which is the square root of that number.[2,4,6,7]  [{2,4,5,7},{4,16,36,49}]
 
@@ -423,21 +415,18 @@ console.log(getAllDuration(dailyRecord));
 // let obj={numberr:ele,square:Math.sqrt(ele)}
 // return obj
 // })
-   
+
 // return result;
 // }
 
 // console.log(calcnum([4,16,36,49]));
 
-    //     let onjename={firstName:ele.split(" ")[0],lastName:ele.split(" ")[1]}
-    //     return onjename
-    // })
-    // return resultArr;
-
+//     let onjename={firstName:ele.split(" ")[0],lastName:ele.split(" ")[1]}
+//     return onjename
+// })
+// return resultArr;
 
 // console.log(firstLast(["teddy wngel","menge nati"]));
-
-
 
 // type flnames={
 //     fname:string;
@@ -450,8 +439,7 @@ console.log(getAllDuration(dailyRecord));
 //         let obje:flnames={fname:name.split(" ")[0],lname:name.split(" ")[1]}
 //         return obje
 //     }
-       
-        
+
 //         )
 //         return resultArr
 // }
@@ -471,57 +459,6 @@ console.log(getAllDuration(dailyRecord));
 // }
 // console.log(replaceEnds([1,2,3,4,5],0,100))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // ??q5*************************************************************************************************************
 
 // const arr1=[1,2,3,4,5];
@@ -531,16 +468,12 @@ console.log(getAllDuration(dailyRecord));
 // newarr.splice(4,1,100);
 // //let newarr2=newarr.splice(1,4);
 
-
 // let result2=[...arr1]
 //     result2.splice(0,1,100)
 //     result2.splice(4,1,0)
 
-
 // console.log(newarr);
 // console.log(result2);
-
-
 
 // // ??q7*************************************************************************************************************
 // const session1 = { userId: 1, duration: 60 };
@@ -551,8 +484,6 @@ console.log(getAllDuration(dailyRecord));
 // const day1 = { sessions: [session1, session2], date: "01/10/2022" };
 // const day2 = { sessions: [session3, session4, session5], date: "01/10/2022" };
 // const dailyRecord = [ day1, day2];
-
-
 
 // type Session={
 //     userId:number,
@@ -579,7 +510,6 @@ console.log(getAllDuration(dailyRecord));
 // }
 // console.log(calculateDailyTotalDuration(day2.sessions));
 
-
 // function totalDuration(dalyrecord:Day[]):number{
 
 //     let total=0;
@@ -591,7 +521,6 @@ console.log(getAllDuration(dailyRecord));
 // }
 
 //console.log(totalDuration(dailyRecord));
-
 
 // ??7D*calculateDaliyTotalDurat************************************************************************************************************
 

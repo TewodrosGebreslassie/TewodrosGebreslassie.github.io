@@ -20,6 +20,7 @@ export function doubleAges(arr: Property[]): Property[] {
 
 export function filterEven(arr:number[]):number[] {
     const filterednum = arr.filter(num=>num %2 === 0);
+    
     return filterednum;
 }
 
