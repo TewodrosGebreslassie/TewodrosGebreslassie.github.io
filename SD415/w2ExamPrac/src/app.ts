@@ -447,34 +447,34 @@ console.log(filterForUserId(dailyRecord, 2));
 // console.log(firstlastname(["teddy yoo","bajoo miyoo","tibag piyoo"]));
 
 ///q5splice and slicenum***********************************************************************************************
-function replaceEnds(arr:number[],num1:number,num2:number):number[]{
-    let newarr=arr.slice();
-newarr.splice(0,1,num1)
-newarr.splice(newarr.length-1,1,num2);
+// function replaceEnds(arr:number[],num1:number,num2:number):number[]{
+//     let newarr=arr.slice();
+// newarr.splice(0,1,num1)
+// newarr.splice(newarr.length-1,1,num2);
 
-let result2=[...arr];
-result2.splice(0,1,num2);
-result2.splice(result2.length-1,1,num1)
+// let result2=[...arr];
+// result2.splice(0,1,num2);
+// result2.splice(result2.length-1,1,num1)
 
-return newarr,result2
-}
-console.log(replaceEnds([1,2,3,4,5],0,100))
+// return newarr,result2
+// }
+// console.log(replaceEnds([1,2,3,4,5],0,100))
 
-// // ??q5*************************************************************************************************************
+// // // ??q5*************************************************************************************************************
 
-const arr1=[1,2,3,4,5];
+// const arr1=[1,2,3,4,5];
 
-const newarr=[...arr1];
-newarr.splice(0,1,0);
-newarr.splice(4,1,100);
-//let newarr2=newarr.splice(1,4);
+// const newarr=[...arr1];
+// newarr.splice(0,1,0);
+// newarr.splice(4,1,100);
+// //let newarr2=newarr.splice(1,4);
 
-let result2=[...arr1]
-    result2.splice(0,1,100)
-    result2.splice(4,1,0)
+// let result2=[...arr1]
+//     result2.splice(0,1,100)
+//     result2.splice(4,1,0)
 
-console.log(newarr);
-console.log(result2);
+// console.log(newarr);
+// console.log(result2);
 
 // // ??q7*************************************************************************************************************
 // const session1 = { userId: 1, duration: 60 };
@@ -559,3 +559,49 @@ console.log(result2);
 //   let result=getallse.map(sec=>sec.duration);
 
 //   return result
+
+
+// type people={
+// fname:string,
+// surname:string,
+// age:number
+// }
+
+// type output={
+// fullname:string,
+// age:string
+// }
+// function mapPwople(names:people):output[]{
+// let resultName=names.map(name=>{
+//   let fulname={name.fname+name.surname,name.Age}
+//   return fullname;
+
+// })
+// return resultName;
+// }
+
+
+
+// function factorial(n:number){
+//   if (n===0|| n==1){
+//     return 1;
+//   }
+//   else{
+//     return n*factorial(n-1);
+//   }
+// }
+
+// Find length of a String recursively, without using length property
+function findLengthRecursive(s:string):number {
+  // Base case: if the string is empty, return 0
+  if (s === "") {
+    return 0;
+  } else {
+    // Recursive case: return 1 (for the current character) + length of the rest of the string
+    return 1 + findLengthRecursive(s.substr(1));
+  }
+}
+
+console.log(findLengthRecursive("Hello")); // Output: 5
+
+

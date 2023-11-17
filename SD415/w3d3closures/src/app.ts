@@ -1,7 +1,7 @@
 //write any code you want to test here and run with npm run app
 // import {makeArmy } from './closures.js';
 
-import { stat } from "fs";
+//import { stat } from "fs";
 
 // const army = makeArmy();
 
@@ -85,17 +85,17 @@ type Players ={
 //     return seasonHighScore;
 // }
 
-function findHighScores(teamStats:Players[]):HighScore[]{
-    const seasonHighScore:HighScore = team
-    for (const player of teamStats){
-        let highPoint = 0;
-        for(const stast of player.stats){
-            if (stast.points > highPoint){
-                highPoint = stast.points;
-            }
-        }
-        let playerHighScore:HighScore = {jersey:player.jersey, high:highPoint};
-        seasonHighScore.push(playerHighScore);
-    }
-    return seasonHighScore;
-}
+// function findHighScores(teamStats:Players[]):HighScore[]{
+//     const seasonHighScore:HighScore = team;
+//     for (const player of teamStats){
+//         let highPoint = 0;
+//         for(const stast of player.stats){
+//             if (stast.points > highPoint){
+//                 highPoint = stast.points;
+//             }
+//         }
+//         let playerHighScore:HighScore = {jersey:player.jersey, high:highPoint};
+//         seasonHighScore.push(playerHighScore);
+//     }
+//     return seasonHighScore;
+// }
