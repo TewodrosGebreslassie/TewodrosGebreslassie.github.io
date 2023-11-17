@@ -286,7 +286,8 @@ let result = arr.map((ele) => ele * ele);
 console.log(result);
 
 // let name=arr.map(baz)
-
+arr.length
+3 
 // ??q4*************************************************************************************************
 type Name = { firstName: string; lastName: string };
 
@@ -446,34 +447,34 @@ console.log(filterForUserId(dailyRecord, 2));
 // console.log(firstlastname(["teddy yoo","bajoo miyoo","tibag piyoo"]));
 
 ///q5splice and slicenum***********************************************************************************************
-// function replaceEnds(arr:number[],num1:number,num2:number):number[]{
-//     let newarr=arr.slice();
-// newarr.splice(0,1,num1)
-// newarr.splice(newarr.length-1,1,num2);
+function replaceEnds(arr:number[],num1:number,num2:number):number[]{
+    let newarr=arr.slice();
+newarr.splice(0,1,num1)
+newarr.splice(newarr.length-1,1,num2);
 
-// let result2=[...arr];
-// result2.splice(0,1,num2);
-// result2.splice(result2.length-1,1,num1)
+let result2=[...arr];
+result2.splice(0,1,num2);
+result2.splice(result2.length-1,1,num1)
 
-// return newarr,result2
-// }
-// console.log(replaceEnds([1,2,3,4,5],0,100))
+return newarr,result2
+}
+console.log(replaceEnds([1,2,3,4,5],0,100))
 
 // // ??q5*************************************************************************************************************
 
-// const arr1=[1,2,3,4,5];
+const arr1=[1,2,3,4,5];
 
-// const newarr=[...arr1];
-// newarr.splice(0,1,0);
-// newarr.splice(4,1,100);
-// //let newarr2=newarr.splice(1,4);
+const newarr=[...arr1];
+newarr.splice(0,1,0);
+newarr.splice(4,1,100);
+//let newarr2=newarr.splice(1,4);
 
-// let result2=[...arr1]
-//     result2.splice(0,1,100)
-//     result2.splice(4,1,0)
+let result2=[...arr1]
+    result2.splice(0,1,100)
+    result2.splice(4,1,0)
 
-// console.log(newarr);
-// console.log(result2);
+console.log(newarr);
+console.log(result2);
 
 // // ??q7*************************************************************************************************************
 // const session1 = { userId: 1, duration: 60 };
