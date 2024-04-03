@@ -8,7 +8,7 @@ function App() {
     </div>
   );
 
-  // JSX element with attributes and child elements
+  // JSX element with attributes and child element
   const element2 = (
     <div className="container">
       <h1>Hello, World!</h1>
