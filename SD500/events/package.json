@@ -1,0 +1,19 @@
+{
+  "name": "events",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "event": "nodemon event.ts",
+    "path": "nodemon path.ts",
+    "buffer": "nodemon buffer_stream.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.11.24",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
+}
