@@ -5,7 +5,10 @@ import ContentCard from './contentCard/ContentCard';
 import JockComponent from './jockComponent/Joke';
 import MappingComponent from './arrayComp/Maping';
 import { jokesData } from './data/JokeData';
-import Calculater from './calculater/calculater';
+import Calculater from './calculater/Calculater';
+import LogIn from './logIn/Login';
+import LogObject from './useStateArr/LogObject';
+
 
 
 function App() {
@@ -18,7 +21,10 @@ const jockComponents= jokesData.map(joke=> <JockComponent key={joke.id} question
 
   return (
   <div>
-
+    <div ><h1>calculater</h1>
+<Calculater/></div>
+<LogIn/>
+<LogObject/>
     {doubled.map(num=>num*2)}
 
     <ContentCard

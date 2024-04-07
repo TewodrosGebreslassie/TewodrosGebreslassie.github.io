@@ -1,28 +1,63 @@
-import React, { useRef, useState } from "react";
-export default function Calculater(){
-    const [numOne, setNUmOne]= useState(0);
-    const [numTwo, SetNumTwo]= useState(0);
+import React, { ChangeEvent, MouseEvent, useRef, useState } from "react";
 
-    
+export default function Calculator() {
+    const [inputNumbers, setInputNumbers] = useState({ num1: 0, num2: 0 });
+    const [operation, setOperation] = useState('');
+    const [result, setResult] = useState(0);
 
-    const num1= useRef<HTMLInputElement>(null)
-    const num2= useRef<HTMLInputElement>(null)
-if(parseFloat(num1.current!.value)>0 && parseFloat(num2.current!.value)>0){
-
-const handleValue=()=>{
-    setNUmOne(parseFloat(num1.current!.value));
-    SetNumTwo(parseFloat(num1.current!?.value))
-}
-// const result=num1+num2;
-    return (<div>
+    const refInputOne = useRef<HTMLInputElement>(null);
+    const refInputTwo = useRef<HTMLInputElement>(null);
  
 
-        <span>{numOne} {numTwo}</span>
-        <input ref={num1} type="text" />
-        <input ref={num2} type="text" />
+    const addButRef = useRef<HTMLButtonElement>(null);
+    const subButRef = useRef<HTMLButtonElement>(null);
+    const divReff = useRef<HTMLButtonElement>(null);
+    const mulReff = useRef<HTMLButtonElement>(null);
 
-        <button onClick={handleValue} >addMe</button>
-        <p>result:{numOne+numTwo}</p>
-    </div>)
-}
+    const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+        const {name, value}=e.target
+        setInputNumbers({...inputNumbers,[name]:Number(value)})
+    }
+
+    const handleButton = (operation: string) => {
+        if (operation === "+") {
+            setOperation('+');
+            setResult(inputNumbers.num1 + inputNumbers.num2);
+        } else if (operation === "-") {
+            setOperation('-');
+            setResult(inputNumbers.num1 - inputNumbers.num2);
+        }
+     else if (operation === "*") {
+        setOperation('*');
+        setResult(inputNumbers.num1 * inputNumbers.num2);
+    }
+    else if (operation === "/") {
+        setOperation('/');
+        setResult(inputNumbers.num1 / inputNumbers.num2);
+    }
+    }
+
+    return (
+        <div>
+            <div>
+                <span>
+                    <input name="num1" ref={refInputOne} type="text" onChange={handleInput} /> {operation}<input name="num2" ref={refInputTwo} type="text" onChange={handleInput} /> result: {result}
+                </span>
+            </div>
+
+            <div>
+                <button ref={addButRef} onClick={() => handleButton('+')}><div>+</div> Addition</button>
+            </div>
+
+            <div>
+                <button ref={subButRef} onClick={() => handleButton('-')}><div>-</div> subtraction</button>
+            </div>
+            <div>
+                <button ref={mulReff} onClick={() => handleButton('*')}> <div>*</div> Multiplication</button>
+            </div>
+            <div>
+                <button ref={divReff} onClick={() => handleButton('/')}><div>/</div> division</button>
+            </div>
+        </div>
+    );
 }

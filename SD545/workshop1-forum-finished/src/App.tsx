@@ -1,44 +1,41 @@
-import { ChangeEvent, useRef, useState } from 'react';
-import classNames from 'classnames';
-import _ from 'lodash';
-import { v4 as uuidv4 } from 'uuid';
-import dayjs from 'dayjs';
+import { ChangeEvent, useRef, useState } from "react";
+import classNames from "classnames";
+import _ from "lodash";
+import { v4 as uuidv4 } from "uuid";
+import dayjs from "dayjs";
 
-import './App.scss'
-import avatar from './images/bozai.png'
-import { defaultList,Comment,tabs,user } from './allData';
-
-
+import "./App.scss";
+import avatar from "./images/bozai.png";
+import { defaultList, Comment, tabs, user } from "./allData";
 
 const App = () => {
+  const [commentList, setCommentList] = useState<Comment[]>(_.orderBy(defaultList, "like", "desc"));
+  const [activeType, setActiveType] = useState("hot");
 
-  const [commentList, setCommentList] = useState<Comment[]>(_.orderBy(defaultList, 'like', 'desc'));
-  const [activeType, setActiveType] = useState('hot');
-
-  const [inputValue, setInputValue]=useState('');
-
+  const [inputValue, setInputValue] = useState("");
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const deleteComment = (rpid: number | string) => {
-    setCommentList(commentList.filter(item => item.rpid !== rpid));
-  }
+    setCommentList(commentList.filter((item) => item.rpid !== rpid));
+  };
 
   const changeActiveType = (type: string) => {
     setActiveType(type);
 
-    if(type === 'hot'){
-      setCommentList(_.orderBy(commentList, 'like', 'desc'));
+    if (type === "hot") {
+      setCommentList(_.orderBy(commentList, "like", "desc"));
     } else {
-      setCommentList(_.orderBy(commentList, 'ctime', 'desc'));
+      setCommentList(_.orderBy(commentList, "ctime", "desc"));
     }
-  }
+  };
 
+  const handleInputValue = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setInputValue(e.target.value);
 
-  const handleInputValue=(e:ChangeEvent<HTMLTextAreaElement>)=>{
-    setInputValue(e.target.value)
+    console.log(e.target.value);
+  };
 
-  }
   const makePost = () => {
     // console.log(textareaRef.current?.value);
     // do another version: controlled component
@@ -46,19 +43,16 @@ const App = () => {
       rpid: uuidv4(),
       user,
       // content:textareaRef.current!.value, //uncontrolled component
-      content:inputValue, //controlled component
-      ctime: dayjs(Date.now()).format('MM-DD HH:mm'),
-      like: 0
-    }
+      content: inputValue, //controlled component
+      ctime: dayjs(Date.now()).format("MM-DD HH:mm"),
+      like: 0,
+    };
 
     setCommentList([...commentList, newComment]);
     // textareaRef.current!.value = '';
-     setInputValue("");
-  // textareaRef.current!.focus();
-
-
-  }
-  
+    setInputValue("");
+    //textareaRef.current!.focus();
+  };
 
   return (
     <div className="app">
@@ -72,15 +66,15 @@ const App = () => {
           </li>
           <li className="nav-sort">
             {/* highlight class name： active */}
-            {
-              tabs.map(tab => (
-              <span key={tab.type}
-                className={classNames('nav-item', {active: tab.type === activeType})}
-                onClick={() => changeActiveType(tab.type)}>
+            {tabs.map((tab) => (
+              <span
+                key={tab.type}
+                className={classNames("nav-item", { active: tab.type === activeType })}
+                onClick={() => changeActiveType(tab.type)}
+              >
                 {tab.text}
-              </span>)
-              )
-            }
+              </span>
+            ))}
           </li>
         </ul>
       </div>
@@ -96,7 +90,10 @@ const App = () => {
           </div>
           <div className="reply-box-wrap">
             {/* comment */}
-            <textarea ref={textareaRef} onChange={handleInputValue}
+            <textarea
+              ref={textareaRef}
+              onChange={handleInputValue}
+              value={inputValue}
               className="reply-box-textarea"
               placeholder="tell something..."
             />
@@ -109,15 +106,12 @@ const App = () => {
         {/* comment list */}
         <div className="reply-list">
           {/* comment item */}
-          {commentList.map(item => (
+          {commentList.map((item) => (
             <div className="reply-item" key={item.rpid}>
               {/* profile */}
               <div className="root-reply-avatar">
                 <div className="bili-avatar">
-                  <img
-                    className="bili-avatar-img"
-                    alt=""
-                  />
+                  <img className="bili-avatar-img" alt="" />
                 </div>
               </div>
 
@@ -135,23 +129,20 @@ const App = () => {
                     {/* total likes */}
                     <span className="reply-time">Like:{item.like}</span>
 
-                    {
-                      item.user.uid === user.uid && (
-                        <span className="delete-btn" onClick={() => deleteComment(item.rpid)}>
-                          Delete
-                        </span>
-                      )
-                    }
+                    {item.user.uid === user.uid && (
+                      <span className="delete-btn" onClick={() => deleteComment(item.rpid)}>
+                        Delete
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
