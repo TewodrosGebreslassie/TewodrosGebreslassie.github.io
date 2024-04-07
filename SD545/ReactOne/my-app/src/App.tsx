@@ -4,6 +4,7 @@ import './App.css';
 import image from './imag/image.png';
 import Header from './components/header';
 import CourseGoalList from './components/courseGoalList';
+import Calculater from './calculater/Calculater';
 
 interface Goal {
   title: string;
@@ -30,6 +31,7 @@ function App() {
       </Header>
       <button onClick={handleAddGoal}>Add Goal</button>
       <CourseGoalList goals={goals} />
+      <Calculater/>
     </main>
   );
 }
