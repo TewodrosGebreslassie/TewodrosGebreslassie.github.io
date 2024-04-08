@@ -49,7 +49,7 @@ const App = () => {
     };
 
     setCommentList([...commentList, newComment]);
-    // textareaRef.current!.value = '';
+    //textareaRef.current!.value = '';
     setInputValue("");
     //textareaRef.current!.focus();
   };
