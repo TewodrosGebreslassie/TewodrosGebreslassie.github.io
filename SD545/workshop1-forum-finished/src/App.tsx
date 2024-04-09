@@ -8,11 +8,13 @@ import "./App.scss";
 import avatar from "./images/bozai.png";
 import { defaultList, Comment, tabs, user } from "./allData";
 
+import "./App.scss";
+
+// Comment List data
+
 const App = () => {
   const [commentList, setCommentList] = useState<Comment[]>(_.orderBy(defaultList, "like", "desc"));
   const [activeType, setActiveType] = useState("hot");
-
-  const [inputValue, setInputValue] = useState("");
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -30,28 +32,20 @@ const App = () => {
     }
   };
 
-  const handleInputValue = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setInputValue(e.target.value);
-
-    console.log(e.target.value);
-  };
-
   const makePost = () => {
     // console.log(textareaRef.current?.value);
     // do another version: controlled component
     const newComment = {
       rpid: uuidv4(),
       user,
-      // content:textareaRef.current!.value, //uncontrolled component
-      content: inputValue, //controlled component
+      content: textareaRef.current!.value, //uncontrolled component
       ctime: dayjs(Date.now()).format("MM-DD HH:mm"),
       like: 0,
     };
 
     setCommentList([...commentList, newComment]);
-    //textareaRef.current!.value = '';
-    setInputValue("");
-    //textareaRef.current!.focus();
+    textareaRef.current!.value = "";
+    textareaRef.current!.focus();
   };
 
   return (
@@ -90,13 +84,7 @@ const App = () => {
           </div>
           <div className="reply-box-wrap">
             {/* comment */}
-            <textarea
-              ref={textareaRef}
-              onChange={handleInputValue}
-              value={inputValue}
-              className="reply-box-textarea"
-              placeholder="tell something..."
-            />
+            <textarea ref={textareaRef} className="reply-box-textarea" placeholder="tell something..." />
             {/* post button */}
             <div className="reply-box-send" onClick={makePost}>
               <div className="send-text">post</div>
