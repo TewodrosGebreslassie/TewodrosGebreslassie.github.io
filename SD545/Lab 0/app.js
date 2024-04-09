@@ -3,27 +3,22 @@
 
 // const arr = [20, 30, 50, 60, 60, 20, 10, 11, 13];
 
-// function sum(arr) {
-//   return arr.reduce((accumulator, currentValue) => {
-//     if (currentValue > 20) {
-//       return accumulator + currentValue;
-//     } else {
-//       return accumulator;
-//     }
-//   }, 0);
-// }
-// sum(arr);
 const arr = [20, 30, 50, 60, 60, 20, 10, 11, 13];
-
 function sum(arr) {
-  let sum = 0;
-  for (let ele of arr) {
-    if (ele > 20) {
-      sum += ele;
-    }
-  }
-  console.log(sum);
+  return arr.filter((elem = elem > 20)).reduce((accu, current) => accu + current, 0);
 }
+
+// 2 function expression
+
+// function sum(arr) {
+//   let sum = 0;
+//   for (let ele of arr) {
+//     if (ele > 20) {
+//       sum += ele;
+//     }
+//   }
+//   console.log(sum);
+// }
 
 sum(arr);
 
