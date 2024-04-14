@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "gender": "female",
+            "name": {
+                "title": "Miss",
+                "first": "Eleutéria",
+                "last": "Freitas"
+            },
+            "location": {
+                "street": {
+                    "number": 1317,
+                    "name": "Rua Doze "
+                },
+                "city": "São Lourenço da Mata",
+                "state": "Paraná",
+                "country": "Brazil",
+                "postcode": 74694,
+                "coordinates": {
+                    "latitude": "-78.5997",
+                    "longitude": "134.7981"
+                },
+                "timezone": {
+                    "offset": "+2:00",
+                    "description": "Kaliningrad, South Africa"
+                }
+            },
+            "email": "eleuteria.freitas@example.com",
+            "login": {
+                "uuid": "474825e7-b5cb-4f4f-af47-146051cba66d",
+                "username": "heavybutterfly351",
+                "password": "diamond",
+                "salt": "uWS9t0y7",
+                "md5": "e910a9397252b4c0623f02382fff1e25",
+                "sha1": "3bd86c709a7b1109d265a7f1943c93d63ea83fd1",
+                "sha256": "d2a7a995b306dca958506bdf54aab569c6ab744fa36a8cf2c131c3be06cdbe5c"
+            },
+            "dob": {
+                "date": "1966-07-27T22:06:04.109Z",
+                "age": 57
+            },
+            "registered": {
+                "date": "2002-11-13T17:28:52.385Z",
+                "age": 21
+            },
+            "phone": "(17) 6633-8567",
+            "cell": "(35) 1315-5977",
+            "id": {
+                "name": "CPF",
+                "value": "400.405.143-78"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/36.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/36.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/36.jpg"
+            },
+            "nat": "BR"
+        }
+    ],
+    "info": {
+        "seed": "699296c503ec9dac",
+        "results": 1,
+        "page": 1,
+        "version": "1.4"
+    }
+}
