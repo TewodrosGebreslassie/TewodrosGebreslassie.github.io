@@ -5,19 +5,24 @@ import List from "./List/List";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import ToDo from "./Types";
-import axios from "axios";
+// import axios from "axios";
 
 export default function App() {
-  const [todos, setTodos] = useState<ToDo>();
+  // const [todos, setTodos] = useState<ToDo>();
 
   useEffect(() => {
-    async function getTodo() {
-      const respons: ToDo = await axios("http://localhost:9000/todos");
-      console.log(respons);
-      setTodos(respons);
+    async function getList() {
+      try {
+        const response = await fetch("http://localhost:3004/todos");
+        const data = await response.json();
+        console.log(data.data);
+        console.log("data");
+      } catch (e) {
+        console.log("error ___________", e);
+      }
     }
-    getTodo();
-  }, [todos]);
+    getList();
+  }, []);
 
   return (
     <div className="todo-container">
