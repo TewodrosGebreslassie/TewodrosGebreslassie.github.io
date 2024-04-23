@@ -1,0 +1,14 @@
+
+  
+  .login-wrap {
+    max-width: 400px; 
+    margin: 0 auto;
+    padding: 0 15px; 
+  }
+  .bagroundHeader{
+    background-color: rgb(138, 143, 182);
+  }
+
+  .headerbox{
+    background-color: rgb(126, 136, 163);
+  }
