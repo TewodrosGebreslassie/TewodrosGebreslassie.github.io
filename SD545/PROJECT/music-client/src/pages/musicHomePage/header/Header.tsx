@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, KeyboardEvent, MouseEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, KeyboardEvent, useState } from "react";
 import logo2 from "../../../images/logo2.jpg";
 import Playlists from "../../../types/playlist";
 import { useNavigate } from "react-router-dom";
@@ -23,6 +23,7 @@ export default function Header({ onsetallMusicList }: Props) {
   const navigate = useNavigate();
   const navigateHandler = () => {
     navigate("/");
+    localStorage.removeItem("access_Token");
   };
 
   async function getSelectedSongs(value: string) {
@@ -62,10 +63,10 @@ export default function Header({ onsetallMusicList }: Props) {
             Search
           </button>
           <img className="mb-4" src={logo2} alt="logoForLogin" width="150" height="100" />
-          <button type="button" className="btn btn-outline-light px-6 py-3" onClick={navigateHandler}>
-            Logout
-          </button>
-        </div>
+        </div>{" "}
+        <button type="button" className="btn btn-outline-light px-6 py-3" style={{ marginLeft: "960px" }} onClick={navigateHandler}>
+          Logout
+        </button>
       </header>
     </div>
   );

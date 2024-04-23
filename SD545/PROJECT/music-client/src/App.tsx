@@ -1,20 +1,25 @@
-import React from "react";
-import Header from "./components/header/Header";
-import SuggestionSongs from "./components/suggestionMusicLIst/SuggestionSongs";
-import YourPlayList from "./components/yourPlayList/YourPlayList";
-import Home from "./pages/Home";
-import musiciconebg from "./components/images/musiciconebg.jpg";
+import MusicHomePage from "./pages/musicHomePage/MusicHomePage";
+
+import Login from "./pages/login/Login";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PageNotFound from "./pages/Error/PageNotFound";
+
+// import Music from "./pages/MusicHomePage/Music";
 
 function App() {
   return (
-    <div className="container" style={{ backgroundImage: `url(${musiciconebg})`, backgroundSize: "cover" }}>
-      <div>
-        <Header />
-        <Home />
-      </div>
+    <div>
+      <Router>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Login />} />
 
-      <SuggestionSongs />
-      <YourPlayList />
+            <Route path="/music" element={<MusicHomePage />} />
+            <Route path="/playlist" element={<MusicHomePage />} />
+            <Route path="/*" element={<PageNotFound />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 }

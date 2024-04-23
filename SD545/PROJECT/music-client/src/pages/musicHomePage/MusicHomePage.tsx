@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+
 import Playlists from "../../types/playlist";
 import Header from "./header/Header";
 import musicServices from "../../apis/services/musicServices";
-import AllSongLists from "../../song/AllSongLists";
-import YourPlayList from "../../song/YourPlayList";
+import AllSongLists from "../../components/song/AllSongLists";
+import YourPlayList from "../../components/song/YourPlayList";
+// import Login from "../login/Login";
+import TokenNotFound from "../Error/TokenNotFound";
 
 export default function MusicHomePage() {
   const [allMusicList, setallMusicList] = useState<Playlists[]>([]);
@@ -26,9 +29,15 @@ export default function MusicHomePage() {
 
   return (
     <div>
-      <Header onsetallMusicList={setallMusicList} />
-      <AllSongLists propsMusicList={allMusicList} propPlayList={playlist} onsetPlayList={setPlaylist} />
-      <YourPlayList propPlaylist={playlist} onsetPlayList={setPlaylist} />
+      {localStorage.getItem("access_Token") ? (
+        <>
+          <Header onsetallMusicList={setallMusicList} />
+          <AllSongLists propsMusicList={allMusicList} propPlayList={playlist} onsetPlayList={setPlaylist} />
+          <YourPlayList propPlaylist={playlist} onsetPlayList={setPlaylist} />
+        </>
+      ) : (
+        <TokenNotFound /> // Redirect to home page if accessToken is not found
+      )}
     </div>
   );
 }
